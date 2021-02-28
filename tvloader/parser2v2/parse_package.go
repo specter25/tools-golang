@@ -100,16 +100,20 @@ func (parser *tvParser2_2) parsePairFromPackage2_2(tag string, value string) err
 		if err != nil {
 			return err
 		}
+		if parser.pkg.PackageChecksums == nil {
+			parser.pkg.PackageChecksums = make([]spdx.Checksum2_2, 9)
+		}
 		switch subkey {
 		case "SHA1":
-			parser.pkg.PackageChecksumSHA1 = subvalue
+			parser.pkg.PackageChecksums = append(parser.pkg.PackageChecksums, spdx.Checksum2_2{Algorithm: 1, Value: subvalue})
 		case "SHA256":
-			parser.pkg.PackageChecksumSHA256 = subvalue
+			parser.pkg.PackageChecksums = append(parser.pkg.PackageChecksums, spdx.Checksum2_2{Algorithm: 3, Value: subvalue})
 		case "MD5":
-			parser.pkg.PackageChecksumMD5 = subvalue
+			parser.pkg.PackageChecksums = append(parser.pkg.PackageChecksums, spdx.Checksum2_2{Algorithm: 8, Value: subvalue})
 		default:
 			return fmt.Errorf("got unknown checksum type %s", subkey)
 		}
+
 	case "PackageHomePage":
 		parser.pkg.PackageHomePage = value
 	case "PackageSourceInfo":

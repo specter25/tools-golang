@@ -353,15 +353,32 @@ func TestParser2_2CanParsePackageTags(t *testing.T) {
 	if err != nil {
 		t.Errorf("expected nil error, got %v", err)
 	}
-	if parser.pkg.PackageChecksumSHA1 != codeSha1 {
-		t.Errorf("expected %s for PackageChecksumSHA1, got %s", codeSha1, parser.pkg.PackageChecksumSHA1)
+	for _, checksum := range parser.pkg.PackageChecksums {
+		switch checksum.Algorithm {
+		case 1:
+			if checksum.Value != codeSha1 {
+				t.Errorf("expected %s for FileChecksumSHA1, got %s", codeSha1, checksum.Value)
+			}
+		case 3:
+			if checksum.Value != codeSha256 {
+				t.Errorf("expected %s for FileChecksumSHA1, got %s", codeSha256, checksum.Value)
+			}
+		case 8:
+			if checksum.Value != codeMd5 {
+				t.Errorf("expected %s for FileChecksumSHA1, got %s", codeMd5, checksum.Value)
+			}
+
+		}
 	}
-	if parser.pkg.PackageChecksumSHA256 != codeSha256 {
-		t.Errorf("expected %s for PackageChecksumSHA256, got %s", codeSha256, parser.pkg.PackageChecksumSHA256)
-	}
-	if parser.pkg.PackageChecksumMD5 != codeMd5 {
-		t.Errorf("expected %s for PackageChecksumMD5, got %s", codeMd5, parser.pkg.PackageChecksumMD5)
-	}
+	// if parser.pkg.PackageChecksumSHA1 != codeSha1 {
+	// 	t.Errorf("expected %s for PackageChecksumSHA1, got %s", codeSha1, parser.pkg.PackageChecksumSHA1)
+	// }
+	// if parser.pkg.PackageChecksumSHA256 != codeSha256 {
+	// 	t.Errorf("expected %s for PackageChecksumSHA256, got %s", codeSha256, parser.pkg.PackageChecksumSHA256)
+	// }
+	// if parser.pkg.PackageChecksumMD5 != codeMd5 {
+	// 	t.Errorf("expected %s for PackageChecksumMD5, got %s", codeMd5, parser.pkg.PackageChecksumMD5)
+	// }
 
 	// Package Home Page
 	err = parser.parsePairFromPackage2_2("PackageHomePage", "https://example.com/whatever2")
