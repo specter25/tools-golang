@@ -351,19 +351,33 @@ func TestSaver2_2PackageSavesFilesIfPresent(t *testing.T) {
 	f1 := &spdx.File2_2{
 		FileName:           "/tmp/whatever1.txt",
 		FileSPDXIdentifier: spdx.ElementID("File1231"),
-		FileChecksumSHA1:   "85ed0817af83a24ad8da68c2b5094de69833983c",
-		LicenseConcluded:   "Apache-2.0",
-		LicenseInfoInFile:  []string{"Apache-2.0"},
-		FileCopyrightText:  "Copyright (c) Jane Doe",
+		// FileChecksumSHA1:   "85ed0817af83a24ad8da68c2b5094de69833983c",
+		FileChecksums: []spdx.Checksum2_2{
+			spdx.Checksum2_2{
+				Algorithm: 1,
+				Value:     "85ed0817af83a24ad8da68c2b5094de69833983c",
+			},
+		},
+
+		LicenseConcluded:  "Apache-2.0",
+		LicenseInfoInFile: []string{"Apache-2.0"},
+		FileCopyrightText: "Copyright (c) Jane Doe",
 	}
 
 	f2 := &spdx.File2_2{
 		FileName:           "/tmp/whatever2.txt",
 		FileSPDXIdentifier: spdx.ElementID("File1232"),
-		FileChecksumSHA1:   "85ed0817af83a24ad8da68c2b5094de69833983d",
-		LicenseConcluded:   "MIT",
-		LicenseInfoInFile:  []string{"MIT"},
-		FileCopyrightText:  "Copyright (c) John Doe",
+		// FileChecksumSHA1:   "85ed0817af83a24ad8da68c2b5094de69833983d",
+		FileChecksums: []spdx.Checksum2_2{
+			spdx.Checksum2_2{
+				Algorithm: 1,
+				Value:     "85ed0817af83a24ad8da68c2b5094de69833983d",
+			},
+		},
+
+		LicenseConcluded:  "MIT",
+		LicenseInfoInFile: []string{"MIT"},
+		FileCopyrightText: "Copyright (c) John Doe",
 	}
 
 	pkg := &spdx.Package2_2{

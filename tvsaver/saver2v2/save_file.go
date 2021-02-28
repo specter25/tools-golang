@@ -20,15 +20,37 @@ func renderFile2_2(f *spdx.File2_2, w io.Writer) error {
 	for _, s := range f.FileType {
 		fmt.Fprintf(w, "FileType: %s\n", s)
 	}
-	if f.FileChecksumSHA1 != "" {
-		fmt.Fprintf(w, "FileChecksum: SHA1: %s\n", f.FileChecksumSHA1)
+	for _, checksum := range f.FileChecksums {
+		switch checksum.Algorithm {
+		case 1:
+			fmt.Fprintf(w, "FileChecksum: SHA1: %s\n", checksum.Value)
+		case 2:
+			fmt.Fprintf(w, "FileChecksum: SHA224: %s\n", checksum.Value)
+		case 3:
+			fmt.Fprintf(w, "FileChecksum: SHA256: %s\n", checksum.Value)
+		case 4:
+			fmt.Fprintf(w, "FileChecksum: SHA384: %s\n", checksum.Value)
+		case 5:
+			fmt.Fprintf(w, "FileChecksum: SHA512: %s\n", checksum.Value)
+		case 6:
+			fmt.Fprintf(w, "FileChecksum: MD2: %s\n", checksum.Value)
+		case 7:
+			fmt.Fprintf(w, "FileChecksum: MD4: %s\n", checksum.Value)
+		case 8:
+			fmt.Fprintf(w, "FileChecksum: MD5: %s\n", checksum.Value)
+		case 9:
+			fmt.Fprintf(w, "FileChecksum: MD6: %s\n", checksum.Value)
+		}
 	}
-	if f.FileChecksumSHA256 != "" {
-		fmt.Fprintf(w, "FileChecksum: SHA256: %s\n", f.FileChecksumSHA256)
-	}
-	if f.FileChecksumMD5 != "" {
-		fmt.Fprintf(w, "FileChecksum: MD5: %s\n", f.FileChecksumMD5)
-	}
+	// if f.FileChecksumSHA1 != "" {
+	// 	fmt.Fprintf(w, "FileChecksum: SHA1: %s\n", f.FileChecksumSHA1)
+	// }
+	// if f.FileChecksumSHA256 != "" {
+	// 	fmt.Fprintf(w, "FileChecksum: SHA256: %s\n", f.FileChecksumSHA256)
+	// }
+	// if f.FileChecksumMD5 != "" {
+	// 	fmt.Fprintf(w, "FileChecksum: MD5: %s\n", f.FileChecksumMD5)
+	// }
 	if f.LicenseConcluded != "" {
 		fmt.Fprintf(w, "LicenseConcluded: %s\n", f.LicenseConcluded)
 	}
