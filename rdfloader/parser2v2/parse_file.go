@@ -4,9 +4,10 @@ package parser2v2
 
 import (
 	"fmt"
+	"strings"
+
 	gordfParser "github.com/spdx/gordf/rdfloader/parser"
 	"github.com/spdx/tools-golang/spdx"
-	"strings"
 )
 
 // returns a file instance and the error if any encountered.
@@ -26,7 +27,7 @@ func (parser *rdfParser2_2) getFileFromNode(fileNode *gordfParser.Node) (file *s
 	}
 
 	// setting color to grey to indicate that we've started parsing this node.
-	parser.cache[fileNode.ID].Color = GREY;
+	parser.cache[fileNode.ID].Color = GREY
 
 	// setting color to black just before function returns to the caller to
 	// indicate that parsing current node is complete.
@@ -129,13 +130,16 @@ func (parser *rdfParser2_2) setFileChecksumFromNode(file *spdx.File2_2, checksum
 	if err != nil {
 		return fmt.Errorf("error parsing checksumNode of a file: %v", err)
 	}
+	if file.FileChecksums == nil {
+		file.FileChecksums = make([]spdx.Checksum2_2, 9)
+	}
 	switch checksumAlgorithm {
 	case "MD5":
-		file.FileChecksumMD5 = checksumValue
+		file.FileChecksums = append(file.FileChecksums, spdx.Checksum2_2{Algorithm: 8, Value: checksumValue})
 	case "SHA1":
-		file.FileChecksumSHA1 = checksumValue
+		file.FileChecksums = append(file.FileChecksums, spdx.Checksum2_2{Algorithm: 1, Value: checksumValue})
 	case "SHA256":
-		file.FileChecksumSHA256 = checksumValue
+		file.FileChecksums = append(file.FileChecksums, spdx.Checksum2_2{Algorithm: 3, Value: checksumValue})
 	case "":
 		return fmt.Errorf("empty checksum algorithm and value")
 	default:
