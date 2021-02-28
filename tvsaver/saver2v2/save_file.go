@@ -42,15 +42,7 @@ func renderFile2_2(f *spdx.File2_2, w io.Writer) error {
 			fmt.Fprintf(w, "FileChecksum: MD6: %s\n", checksum.Value)
 		}
 	}
-	// if f.FileChecksumSHA1 != "" {
-	// 	fmt.Fprintf(w, "FileChecksum: SHA1: %s\n", f.FileChecksumSHA1)
-	// }
-	// if f.FileChecksumSHA256 != "" {
-	// 	fmt.Fprintf(w, "FileChecksum: SHA256: %s\n", f.FileChecksumSHA256)
-	// }
-	// if f.FileChecksumMD5 != "" {
-	// 	fmt.Fprintf(w, "FileChecksum: MD5: %s\n", f.FileChecksumMD5)
-	// }
+
 	if f.LicenseConcluded != "" {
 		fmt.Fprintf(w, "LicenseConcluded: %s\n", f.LicenseConcluded)
 	}

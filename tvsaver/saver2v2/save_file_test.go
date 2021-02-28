@@ -33,9 +33,6 @@ func TestSaver2_2FileSavesText(t *testing.T) {
 			},
 		},
 
-		// FileChecksumSHA1:   "85ed0817af83a24ad8da68c2b5094de69833983c",
-		// FileChecksumSHA256: "11b6d3ee554eedf79299905a98f9b9a04e498210b59f15094c916c91d150efcd",
-		// FileChecksumMD5:    "624c1abb3664f4b35547e7c73864ad24",
 		LicenseConcluded: "Apache-2.0",
 		LicenseInfoInFile: []string{
 			"Apache-2.0",
@@ -155,7 +152,6 @@ func TestSaver2_2FileSavesSnippetsAlso(t *testing.T) {
 			},
 		},
 
-		// FileChecksumSHA1:   "85ed0817af83a24ad8da68c2b5094de69833983c",
 		LicenseConcluded: "Apache-2.0",
 		LicenseInfoInFile: []string{
 			"Apache-2.0",
@@ -211,7 +207,6 @@ func TestSaver2_2FileOmitsOptionalFieldsIfEmpty(t *testing.T) {
 			},
 		},
 
-		// FileChecksumSHA1:   "85ed0817af83a24ad8da68c2b5094de69833983c",
 		LicenseConcluded: "Apache-2.0",
 		LicenseInfoInFile: []string{
 			"Apache-2.0",
@@ -254,7 +249,6 @@ func TestSaver2_2FileWrapsCopyrightMultiLine(t *testing.T) {
 			},
 		},
 
-		// FileChecksumSHA1:   "85ed0817af83a24ad8da68c2b5094de69833983c",
 		LicenseConcluded: "Apache-2.0",
 		LicenseInfoInFile: []string{
 			"Apache-2.0",

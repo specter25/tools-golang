@@ -74,9 +74,6 @@ func TestSaver2_2PackageSavesTextCombo1(t *testing.T) {
 			},
 		},
 
-		// PackageChecksumSHA1:                 "85ed0817af83a24ad8da68c2b5094de69833983c",
-		// PackageChecksumSHA256:               "11b6d3ee554eedf79299905a98f9b9a04e498210b59f15094c916c91d150efcd",
-		// PackageChecksumMD5:                  "624c1abb3664f4b35547e7c73864ad24",
 		PackageHomePage:         "http://example.com/p1",
 		PackageSourceInfo:       "this is a source comment",
 		PackageLicenseConcluded: "GPL-2.0-or-later",
@@ -179,9 +176,6 @@ func TestSaver2_2PackageSavesTextCombo2(t *testing.T) {
 				Value:     "624c1abb3664f4b35547e7c73864ad24",
 			},
 		},
-		// PackageChecksumSHA1:           "85ed0817af83a24ad8da68c2b5094de69833983c",
-		// PackageChecksumSHA256:         "11b6d3ee554eedf79299905a98f9b9a04e498210b59f15094c916c91d150efcd",
-		// PackageChecksumMD5:            "624c1abb3664f4b35547e7c73864ad24",
 		PackageHomePage:         "http://example.com/p1",
 		PackageSourceInfo:       "this is a source comment",
 		PackageLicenseConcluded: "GPL-2.0-or-later",
@@ -276,9 +270,6 @@ func TestSaver2_2PackageSavesTextCombo3(t *testing.T) {
 			},
 		},
 
-		// PackageChecksumSHA1:     "85ed0817af83a24ad8da68c2b5094de69833983c",
-		// PackageChecksumSHA256:   "11b6d3ee554eedf79299905a98f9b9a04e498210b59f15094c916c91d150efcd",
-		// PackageChecksumMD5:      "624c1abb3664f4b35547e7c73864ad24",
 		PackageHomePage:         "http://example.com/p1",
 		PackageSourceInfo:       "this is a source comment",
 		PackageLicenseConcluded: "GPL-2.0-or-later",
@@ -395,7 +386,6 @@ func TestSaver2_2PackageSavesFilesIfPresent(t *testing.T) {
 	f1 := &spdx.File2_2{
 		FileName:           "/tmp/whatever1.txt",
 		FileSPDXIdentifier: spdx.ElementID("File1231"),
-		// FileChecksumSHA1:   "85ed0817af83a24ad8da68c2b5094de69833983c",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
 				Algorithm: 1,
@@ -411,7 +401,6 @@ func TestSaver2_2PackageSavesFilesIfPresent(t *testing.T) {
 	f2 := &spdx.File2_2{
 		FileName:           "/tmp/whatever2.txt",
 		FileSPDXIdentifier: spdx.ElementID("File1232"),
-		// FileChecksumSHA1:   "85ed0817af83a24ad8da68c2b5094de69833983d",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
 				Algorithm: 1,

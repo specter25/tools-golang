@@ -460,16 +460,6 @@ func TestParser2_2CanParseFileTags(t *testing.T) {
 
 		}
 	}
-	// if parser.file.FileChecksumSHA1 != codeSha1 {
-	// 	t.Errorf("expected %s for FileChecksumSHA1, got %s", codeSha1, parser.file.FileChecksumSHA1)
-	// }
-	// if parser.file.FileChecksumSHA256 != codeSha256 {
-	// 	t.Errorf("expected %s for FileChecksumSHA256, got %s", codeSha256, parser.file.FileChecksumSHA256)
-	// }
-	// if parser.file.FileChecksumMD5 != codeMd5 {
-	// 	t.Errorf("expected %s for FileChecksumMD5, got %s", codeMd5, parser.file.FileChecksumMD5)
-	// }
-
 	// Concluded License
 	err = parser.parsePairFromFile2_2("LicenseConcluded", "Apache-2.0 OR GPL-2.0-or-later")
 	if err != nil {

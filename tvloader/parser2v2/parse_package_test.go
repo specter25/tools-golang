@@ -370,15 +370,6 @@ func TestParser2_2CanParsePackageTags(t *testing.T) {
 
 		}
 	}
-	// if parser.pkg.PackageChecksumSHA1 != codeSha1 {
-	// 	t.Errorf("expected %s for PackageChecksumSHA1, got %s", codeSha1, parser.pkg.PackageChecksumSHA1)
-	// }
-	// if parser.pkg.PackageChecksumSHA256 != codeSha256 {
-	// 	t.Errorf("expected %s for PackageChecksumSHA256, got %s", codeSha256, parser.pkg.PackageChecksumSHA256)
-	// }
-	// if parser.pkg.PackageChecksumMD5 != codeMd5 {
-	// 	t.Errorf("expected %s for PackageChecksumMD5, got %s", codeMd5, parser.pkg.PackageChecksumMD5)
-	// }
 
 	// Package Home Page
 	err = parser.parsePairFromPackage2_2("PackageHomePage", "https://example.com/whatever2")

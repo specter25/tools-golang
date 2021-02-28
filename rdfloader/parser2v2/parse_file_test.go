@@ -223,15 +223,6 @@ func Test_rdfParser2_2_setFileChecksumFromNode(t *testing.T) {
 			}
 		}
 	}
-	// if file.FileChecksumMD5 != checksumValue {
-	// 	t.Errorf("wrong checksum value for md5. Expected: %s, found: %s", checksumValue, file.FileChecksumMD5)
-	// }
-	// if file.FileChecksumSHA1 != "" {
-	// 	t.Errorf("incorrectly set sha1, should've been empty")
-	// }
-	// if file.FileChecksumSHA256 != "" {
-	// 	t.Errorf("incorrectly set sha256, should've been empty")
-	// }
 
 	// TestCase 2: valid sha1 checksum
 	parser, _ = parserFromBodyContent(` 
@@ -263,16 +254,6 @@ func Test_rdfParser2_2_setFileChecksumFromNode(t *testing.T) {
 		}
 	}
 
-	// if file.FileChecksumSHA1 != checksumValue {
-	// 	t.Errorf("wrong checksum value for sha1. Expected: %s, found: %s", checksumValue, file.FileChecksumSHA1)
-	// }
-	// if file.FileChecksumMD5 != "" {
-	// 	t.Errorf("incorrectly set md5, should've been empty")
-	// }
-	// if file.FileChecksumSHA256 != "" {
-	// 	t.Errorf("incorrectly set sha256, should've been empty")
-	// }
-
 	// TestCase 3: valid sha256 checksum
 	parser, _ = parserFromBodyContent(` 
 		<spdx:Checksum>
@@ -302,15 +283,6 @@ func Test_rdfParser2_2_setFileChecksumFromNode(t *testing.T) {
 			}
 		}
 	}
-	// if file.FileChecksumSHA256 != checksumValue {
-	// 	t.Errorf("wrong checksum value for sha256. Expected: %s, found: %s", checksumValue, file.FileChecksumSHA256)
-	// }
-	// if file.FileChecksumMD5 != "" {
-	// 	t.Errorf("incorrectly set md5, should've been empty")
-	// }
-	// if file.FileChecksumSHA1 != "" {
-	// 	t.Errorf("incorrectly set sha1, should've been empty")
-	// }
 
 	// TestCase 4: checksum node without one of the mandatory attributes
 	parser, _ = parserFromBodyContent(` 
@@ -627,9 +599,6 @@ func Test_rdfParser2_2_getFileFromNode(t *testing.T) {
 	}
 
 	expectedChecksum := "0a3a0e1ab72b7c132f5021c538a7a3ea6d539bcd"
-	// if file.FileChecksumSHA1 != expectedChecksum {
-	// 	t.Errorf("expected %s, found %s", expectedChecksum, file.FileChecksumSHA1)
-	// }
 
 	for _, checksum := range file.FileChecksums {
 		switch checksum.Algorithm {
