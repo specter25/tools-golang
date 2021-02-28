@@ -58,13 +58,16 @@ func (parser *tvParser2_2) parsePairFromFile2_2(tag string, value string) error 
 		if err != nil {
 			return err
 		}
+		if parser.file.FileChecksums == nil {
+			parser.file.FileChecksums = make([]spdx.Checksum2_2, 9)
+		}
 		switch subkey {
 		case "SHA1":
-			parser.file.FileChecksumSHA1 = subvalue
+			parser.file.FileChecksums = append(parser.file.FileChecksums, spdx.Checksum2_2{Algorithm: 1, Value: subvalue})
 		case "SHA256":
-			parser.file.FileChecksumSHA256 = subvalue
+			parser.file.FileChecksums = append(parser.file.FileChecksums, spdx.Checksum2_2{Algorithm: 3, Value: subvalue})
 		case "MD5":
-			parser.file.FileChecksumMD5 = subvalue
+			parser.file.FileChecksums = append(parser.file.FileChecksums, spdx.Checksum2_2{Algorithm: 8, Value: subvalue})
 		default:
 			return fmt.Errorf("got unknown checksum type %s", subkey)
 		}
