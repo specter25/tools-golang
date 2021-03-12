@@ -135,11 +135,11 @@ func (parser *rdfParser2_2) setFileChecksumFromNode(file *spdx.File2_2, checksum
 	}
 	switch checksumAlgorithm {
 	case "MD5":
-		file.FileChecksums = append(file.FileChecksums, spdx.Checksum2_2{Algorithm: 8, Value: checksumValue})
+		file.FileChecksums = append(file.FileChecksums, spdx.Checksum2_2{Algorithm: spdx.MD5, Value: checksumValue})
 	case "SHA1":
-		file.FileChecksums = append(file.FileChecksums, spdx.Checksum2_2{Algorithm: 1, Value: checksumValue})
+		file.FileChecksums = append(file.FileChecksums, spdx.Checksum2_2{Algorithm: spdx.SHA1, Value: checksumValue})
 	case "SHA256":
-		file.FileChecksums = append(file.FileChecksums, spdx.Checksum2_2{Algorithm: 3, Value: checksumValue})
+		file.FileChecksums = append(file.FileChecksums, spdx.Checksum2_2{Algorithm: spdx.SHA256, Value: checksumValue})
 	case "":
 		return fmt.Errorf("empty checksum algorithm and value")
 	default:

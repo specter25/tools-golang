@@ -122,7 +122,7 @@ func TestPackage2_2CanGetVerificationCode(t *testing.T) {
 			FileSPDXIdentifier: "File0",
 			FileChecksums: []spdx.Checksum2_2{
 				spdx.Checksum2_2{
-					Algorithm: 1,
+					Algorithm: spdx.SHA1,
 					Value:     "aaaaaaaaaabbbbbbbbbbccccccccccdddddddddd",
 				},
 			},
@@ -132,7 +132,7 @@ func TestPackage2_2CanGetVerificationCode(t *testing.T) {
 			FileSPDXIdentifier: "File1",
 			FileChecksums: []spdx.Checksum2_2{
 				spdx.Checksum2_2{
-					Algorithm: 1,
+					Algorithm: spdx.SHA1,
 					Value:     "3333333333bbbbbbbbbbccccccccccdddddddddd",
 				},
 			},
@@ -142,7 +142,7 @@ func TestPackage2_2CanGetVerificationCode(t *testing.T) {
 			FileSPDXIdentifier: "File2",
 			FileChecksums: []spdx.Checksum2_2{
 				spdx.Checksum2_2{
-					Algorithm: 1,
+					Algorithm: spdx.SHA1,
 					Value:     "8888888888bbbbbbbbbbccccccccccdddddddddd",
 				},
 			},
@@ -152,7 +152,7 @@ func TestPackage2_2CanGetVerificationCode(t *testing.T) {
 			FileSPDXIdentifier: "File3",
 			FileChecksums: []spdx.Checksum2_2{
 				spdx.Checksum2_2{
-					Algorithm: 1,
+					Algorithm: spdx.SHA1,
 					Value:     "2222222222bbbbbbbbbbccccccccccdddddddddd",
 				},
 			},
@@ -162,7 +162,7 @@ func TestPackage2_2CanGetVerificationCode(t *testing.T) {
 			FileSPDXIdentifier: "File4",
 			FileChecksums: []spdx.Checksum2_2{
 				spdx.Checksum2_2{
-					Algorithm: 1,
+					Algorithm: spdx.SHA1,
 					Value:     "bbbbbbbbbbccccccccccddddddddddaaaaaaaaaa",
 				},
 			},
@@ -188,7 +188,7 @@ func TestPackage2_2CanGetVerificationCodeIgnoringExcludesFile(t *testing.T) {
 			FileSPDXIdentifier: "File0",
 			FileChecksums: []spdx.Checksum2_2{
 				spdx.Checksum2_2{
-					Algorithm: 1,
+					Algorithm: spdx.SHA1,
 					Value:     "aaaaaaaaaabbbbbbbbbbccccccccccdddddddddd",
 				},
 			},
@@ -198,7 +198,7 @@ func TestPackage2_2CanGetVerificationCodeIgnoringExcludesFile(t *testing.T) {
 			FileSPDXIdentifier: "File1",
 			FileChecksums: []spdx.Checksum2_2{
 				spdx.Checksum2_2{
-					Algorithm: 1,
+					Algorithm: spdx.SHA1,
 					Value:     "3333333333bbbbbbbbbbccccccccccdddddddddd",
 				},
 			},
@@ -208,7 +208,7 @@ func TestPackage2_2CanGetVerificationCodeIgnoringExcludesFile(t *testing.T) {
 			FileSPDXIdentifier: "File2",
 			FileChecksums: []spdx.Checksum2_2{
 				spdx.Checksum2_2{
-					Algorithm: 1,
+					Algorithm: spdx.SHA1,
 					Value:     "bbbbbbbbbbccccccccccddddddddddaaaaaaaaaa",
 				},
 			},
@@ -218,7 +218,7 @@ func TestPackage2_2CanGetVerificationCodeIgnoringExcludesFile(t *testing.T) {
 			FileSPDXIdentifier: "File3",
 			FileChecksums: []spdx.Checksum2_2{
 				spdx.Checksum2_2{
-					Algorithm: 1,
+					Algorithm: spdx.SHA1,
 					Value:     "8888888888bbbbbbbbbbccccccccccdddddddddd",
 				},
 			},
@@ -228,7 +228,7 @@ func TestPackage2_2CanGetVerificationCodeIgnoringExcludesFile(t *testing.T) {
 			FileSPDXIdentifier: "File4",
 			FileChecksums: []spdx.Checksum2_2{
 				spdx.Checksum2_2{
-					Algorithm: 1,
+					Algorithm: spdx.SHA1,
 					Value:     "2222222222bbbbbbbbbbccccccccccdddddddddd",
 				},
 			},
@@ -254,7 +254,7 @@ func TestPackage2_2GetVerificationCodeFailsIfNilFileInSlice(t *testing.T) {
 			FileSPDXIdentifier: "File0",
 			FileChecksums: []spdx.Checksum2_2{
 				spdx.Checksum2_2{
-					Algorithm: 1,
+					Algorithm: spdx.SHA1,
 					Value:     "aaaaaaaaaabbbbbbbbbbccccccccccdddddddddd",
 				},
 			},
@@ -265,7 +265,7 @@ func TestPackage2_2GetVerificationCodeFailsIfNilFileInSlice(t *testing.T) {
 			FileSPDXIdentifier: "File2",
 			FileChecksums: []spdx.Checksum2_2{
 				spdx.Checksum2_2{
-					Algorithm: 1,
+					Algorithm: spdx.SHA1,
 					Value:     "8888888888bbbbbbbbbbccccccccccdddddddddd",
 				},
 			},

@@ -60,24 +60,24 @@ func renderPackage2_2(pkg *spdx.Package2_2, w io.Writer) error {
 	}
 	for _, checksum := range pkg.PackageChecksums {
 		switch checksum.Algorithm {
-		case 1:
+		case spdx.SHA1:
 			fmt.Fprintf(w, "PackageChecksum: SHA1: %s\n", checksum.Value)
-		case 2:
-			fmt.Fprintf(w, "PackageChecksum: SHA224: %s\n", checksum.Value)
-		case 3:
+		// case 2:
+		// 	fmt.Fprintf(w, "PackageChecksum: SHA224: %s\n", checksum.Value)
+		case spdx.SHA256:
 			fmt.Fprintf(w, "PackageChecksum: SHA256: %s\n", checksum.Value)
-		case 4:
-			fmt.Fprintf(w, "PackageChecksum: SHA384: %s\n", checksum.Value)
-		case 5:
-			fmt.Fprintf(w, "PackageChecksum: SHA512: %s\n", checksum.Value)
-		case 6:
-			fmt.Fprintf(w, "PackageChecksum: MD2: %s\n", checksum.Value)
-		case 7:
-			fmt.Fprintf(w, "PackageChecksum: MD4: %s\n", checksum.Value)
-		case 8:
+		// case 4:
+		// 	fmt.Fprintf(w, "PackageChecksum: SHA384: %s\n", checksum.Value)
+		// case 5:
+		// 	fmt.Fprintf(w, "PackageChecksum: SHA512: %s\n", checksum.Value)
+		// case 6:
+		// 	fmt.Fprintf(w, "PackageChecksum: MD2: %s\n", checksum.Value)
+		// case 7:
+		// 	fmt.Fprintf(w, "PackageChecksum: MD4: %s\n", checksum.Value)
+		case spdx.MD5:
 			fmt.Fprintf(w, "PackageChecksum: MD5: %s\n", checksum.Value)
-		case 9:
-			fmt.Fprintf(w, "PackageChecksum: MD6: %s\n", checksum.Value)
+			// case 9:
+			// 	fmt.Fprintf(w, "PackageChecksum: MD6: %s\n", checksum.Value)
 		}
 	}
 	if pkg.PackageHomePage != "" {

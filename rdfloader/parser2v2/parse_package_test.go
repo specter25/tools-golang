@@ -633,7 +633,7 @@ func Test_rdfParser2_2_setPackageChecksum(t *testing.T) {
 
 	for _, checksum := range pkg.PackageChecksums {
 		switch checksum.Algorithm {
-		case 1:
+		case spdx.SHA1:
 			if checksum.Value != expectedChecksumValue {
 				t.Errorf("expected %v, got: %v", expectedChecksumValue, checksum.Value)
 			}
@@ -656,7 +656,7 @@ func Test_rdfParser2_2_setPackageChecksum(t *testing.T) {
 	expectedChecksumValue = "2fd4e1c67a2d28fced849ee1bb76e7391b93eb12"
 	for _, checksum := range pkg.PackageChecksums {
 		switch checksum.Algorithm {
-		case 3:
+		case spdx.SHA256:
 			if checksum.Value != expectedChecksumValue {
 				t.Errorf("expected %v, got: %v", expectedChecksumValue, checksum.Value)
 			}
@@ -679,7 +679,7 @@ func Test_rdfParser2_2_setPackageChecksum(t *testing.T) {
 	expectedChecksumValue = "2fd4e1c67a2d28fced849ee1bb76e7391b93eb12"
 	for _, checksum := range pkg.PackageChecksums {
 		switch checksum.Algorithm {
-		case 8:
+		case spdx.MD5:
 			if checksum.Value != expectedChecksumValue {
 				t.Errorf("expected %v, got: %v", expectedChecksumValue, checksum.Value)
 			}

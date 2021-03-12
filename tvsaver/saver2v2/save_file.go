@@ -22,24 +22,24 @@ func renderFile2_2(f *spdx.File2_2, w io.Writer) error {
 	}
 	for _, checksum := range f.FileChecksums {
 		switch checksum.Algorithm {
-		case 1:
+		case spdx.SHA1:
 			fmt.Fprintf(w, "FileChecksum: SHA1: %s\n", checksum.Value)
-		case 2:
-			fmt.Fprintf(w, "FileChecksum: SHA224: %s\n", checksum.Value)
-		case 3:
+		// case 2:
+		// 	fmt.Fprintf(w, "FileChecksum: SHA224: %s\n", checksum.Value)
+		case spdx.SHA256:
 			fmt.Fprintf(w, "FileChecksum: SHA256: %s\n", checksum.Value)
-		case 4:
-			fmt.Fprintf(w, "FileChecksum: SHA384: %s\n", checksum.Value)
-		case 5:
-			fmt.Fprintf(w, "FileChecksum: SHA512: %s\n", checksum.Value)
-		case 6:
-			fmt.Fprintf(w, "FileChecksum: MD2: %s\n", checksum.Value)
-		case 7:
-			fmt.Fprintf(w, "FileChecksum: MD4: %s\n", checksum.Value)
-		case 8:
+		// case 4:
+		// 	fmt.Fprintf(w, "FileChecksum: SHA384: %s\n", checksum.Value)
+		// case 5:
+		// 	fmt.Fprintf(w, "FileChecksum: SHA512: %s\n", checksum.Value)
+		// case 6:
+		// 	fmt.Fprintf(w, "FileChecksum: MD2: %s\n", checksum.Value)
+		// case 7:
+		// 	fmt.Fprintf(w, "FileChecksum: MD4: %s\n", checksum.Value)
+		case spdx.MD5:
 			fmt.Fprintf(w, "FileChecksum: MD5: %s\n", checksum.Value)
-		case 9:
-			fmt.Fprintf(w, "FileChecksum: MD6: %s\n", checksum.Value)
+			// case 9:
+			// 	fmt.Fprintf(w, "FileChecksum: MD6: %s\n", checksum.Value)
 		}
 	}
 

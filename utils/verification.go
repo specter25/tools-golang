@@ -54,7 +54,7 @@ func GetVerificationCode2_2(files map[spdx.ElementID]*spdx.File2_2, excludeFile 
 		}
 		if f.FileName != excludeFile {
 			for _, checksum := range f.FileChecksums {
-				if checksum.Algorithm == 1 {
+				if checksum.Algorithm == spdx.SHA1 {
 					shas = append(shas, checksum.Value)
 				}
 			}

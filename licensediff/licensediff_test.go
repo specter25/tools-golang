@@ -504,7 +504,7 @@ func Test2_2DifferCanCreateDiffPairs(t *testing.T) {
 		// FileChecksumSHA1:   "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -523,7 +523,7 @@ func Test2_2DifferCanCreateDiffPairs(t *testing.T) {
 		// FileChecksumSHA1:   "066c5139bd9a43d15812ec1a1755b08ccf199824",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -542,7 +542,7 @@ func Test2_2DifferCanCreateDiffPairs(t *testing.T) {
 		// FileChecksumSHA1:   "bd0f4863b15fad2b79b35303af54fcb5baaf7c68",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -562,7 +562,7 @@ func Test2_2DifferCanCreateDiffPairs(t *testing.T) {
 		// FileChecksumSHA1:   "bc417a575ceae93435bcb7bfd382ac28cbdaa8b5",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -579,7 +579,7 @@ func Test2_2DifferCanCreateDiffPairs(t *testing.T) {
 		// FileChecksumSHA1:   "bc417a575ceae93435bcb7bfd382ac28cbdaa8b5",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -599,7 +599,7 @@ func Test2_2DifferCanCreateDiffPairs(t *testing.T) {
 		// FileChecksumSHA1:   "ba226db943bbbf455da77afab6f16dbab156d000",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -616,7 +616,7 @@ func Test2_2DifferCanCreateDiffPairs(t *testing.T) {
 		// FileChecksumSHA1:   "b6e0ec7d085c5699b46f6f8d425413702652874d",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -636,7 +636,7 @@ func Test2_2DifferCanCreateDiffPairs(t *testing.T) {
 		// FileChecksumSHA1:   "ba226db943bbbf455da77afab6f16dbab156d000",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -653,7 +653,7 @@ func Test2_2DifferCanCreateDiffPairs(t *testing.T) {
 		// FileChecksumSHA1:   "b6e0ec7d085c5699b46f6f8d425413702652874d",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -806,7 +806,7 @@ func Test2_2DifferCanCreateDiffStructuredResults(t *testing.T) {
 		// FileChecksumSHA1:   "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -825,7 +825,7 @@ func Test2_2DifferCanCreateDiffStructuredResults(t *testing.T) {
 		// FileChecksumSHA1:   "066c5139bd9a43d15812ec1a1755b08ccf199824",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -844,7 +844,7 @@ func Test2_2DifferCanCreateDiffStructuredResults(t *testing.T) {
 		// FileChecksumSHA1:   "bd0f4863b15fad2b79b35303af54fcb5baaf7c68",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -864,7 +864,7 @@ func Test2_2DifferCanCreateDiffStructuredResults(t *testing.T) {
 		// FileChecksumSHA1:   "bc417a575ceae93435bcb7bfd382ac28cbdaa8b5",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -881,7 +881,7 @@ func Test2_2DifferCanCreateDiffStructuredResults(t *testing.T) {
 		// FileChecksumSHA1:   "bc417a575ceae93435bcb7bfd382ac28cbdaa8b5",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -911,7 +911,7 @@ func Test2_2DifferCanCreateDiffStructuredResults(t *testing.T) {
 		// FileChecksumSHA1:   "b6e0ec7d085c5699b46f6f8d425413702652874d",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -931,7 +931,7 @@ func Test2_2DifferCanCreateDiffStructuredResults(t *testing.T) {
 		// FileChecksumSHA1:   "ba226db943bbbf455da77afab6f16dbab156d000",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},
@@ -948,7 +948,7 @@ func Test2_2DifferCanCreateDiffStructuredResults(t *testing.T) {
 		// FileChecksumSHA1:   "b6e0ec7d085c5699b46f6f8d425413702652874d",
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "6c92dc8bc462b6889d9b1c0bc16c54d19a2cbdd3",
 			},
 		},

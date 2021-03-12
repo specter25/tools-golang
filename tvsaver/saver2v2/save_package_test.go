@@ -61,15 +61,15 @@ func TestSaver2_2PackageSavesTextCombo1(t *testing.T) {
 		PackageVerificationCodeExcludedFile: "p1-0.1.0.spdx",
 		PackageChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "85ed0817af83a24ad8da68c2b5094de69833983c",
 			},
 			spdx.Checksum2_2{
-				Algorithm: 3,
+				Algorithm: spdx.SHA256,
 				Value:     "11b6d3ee554eedf79299905a98f9b9a04e498210b59f15094c916c91d150efcd",
 			},
 			spdx.Checksum2_2{
-				Algorithm: 8,
+				Algorithm: spdx.MD5,
 				Value:     "624c1abb3664f4b35547e7c73864ad24",
 			},
 		},
@@ -164,15 +164,15 @@ func TestSaver2_2PackageSavesTextCombo2(t *testing.T) {
 		PackageVerificationCode:       "0123456789abcdef0123456789abcdef01234567",
 		PackageChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "85ed0817af83a24ad8da68c2b5094de69833983c",
 			},
 			spdx.Checksum2_2{
-				Algorithm: 3,
+				Algorithm: spdx.SHA256,
 				Value:     "11b6d3ee554eedf79299905a98f9b9a04e498210b59f15094c916c91d150efcd",
 			},
 			spdx.Checksum2_2{
-				Algorithm: 8,
+				Algorithm: spdx.MD5,
 				Value:     "624c1abb3664f4b35547e7c73864ad24",
 			},
 		},
@@ -257,15 +257,15 @@ func TestSaver2_2PackageSavesTextCombo3(t *testing.T) {
 		PackageVerificationCode: "0123456789abcdef0123456789abcdef01234567",
 		PackageChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "85ed0817af83a24ad8da68c2b5094de69833983c",
 			},
 			spdx.Checksum2_2{
-				Algorithm: 3,
+				Algorithm: spdx.SHA256,
 				Value:     "11b6d3ee554eedf79299905a98f9b9a04e498210b59f15094c916c91d150efcd",
 			},
 			spdx.Checksum2_2{
-				Algorithm: 8,
+				Algorithm: spdx.MD5,
 				Value:     "624c1abb3664f4b35547e7c73864ad24",
 			},
 		},
@@ -388,7 +388,7 @@ func TestSaver2_2PackageSavesFilesIfPresent(t *testing.T) {
 		FileSPDXIdentifier: spdx.ElementID("File1231"),
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "85ed0817af83a24ad8da68c2b5094de69833983c",
 			},
 		},
@@ -403,7 +403,7 @@ func TestSaver2_2PackageSavesFilesIfPresent(t *testing.T) {
 		FileSPDXIdentifier: spdx.ElementID("File1232"),
 		FileChecksums: []spdx.Checksum2_2{
 			spdx.Checksum2_2{
-				Algorithm: 1,
+				Algorithm: spdx.SHA1,
 				Value:     "85ed0817af83a24ad8da68c2b5094de69833983d",
 			},
 		},

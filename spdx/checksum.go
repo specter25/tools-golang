@@ -5,8 +5,8 @@ package spdx
 type ChecksumAlgorithm2_2 int
 
 const (
-	SHA1 ChecksumAlgorithm2_2 = iota
-	SHA224
+	SHA224 ChecksumAlgorithm2_2 = iota
+	SHA1
 	SHA256
 	SHA384
 	SHA512

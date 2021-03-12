@@ -445,15 +445,15 @@ func TestParser2_2CanParseFileTags(t *testing.T) {
 	}
 	for _, checksum := range parser.file.FileChecksums {
 		switch checksum.Algorithm {
-		case 1:
+		case spdx.SHA1:
 			if checksum.Value != codeSha1 {
 				t.Errorf("expected %s for FileChecksumSHA1, got %s", codeSha1, checksum.Value)
 			}
-		case 3:
+		case spdx.SHA256:
 			if checksum.Value != codeSha256 {
 				t.Errorf("expected %s for FileChecksumSHA1, got %s", codeSha256, checksum.Value)
 			}
-		case 8:
+		case spdx.MD5:
 			if checksum.Value != codeMd5 {
 				t.Errorf("expected %s for FileChecksumSHA1, got %s", codeMd5, checksum.Value)
 			}

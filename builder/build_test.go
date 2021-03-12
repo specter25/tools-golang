@@ -484,15 +484,15 @@ func TestBuild2_2CreatesDocument(t *testing.T) {
 	}
 	for _, checksum := range fileEmpty.FileChecksums {
 		switch checksum.Algorithm {
-		case 1:
+		case spdx.SHA1:
 			if checksum.Value != "da39a3ee5e6b4b0d3255bfef95601890afd80709" {
 				t.Errorf("expected %v, got %v", "da39a3ee5e6b4b0d3255bfef95601890afd80709", checksum.Value)
 			}
-		case 3:
+		case spdx.SHA256:
 			if checksum.Value != "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" {
 				t.Errorf("expected %v, got %v", "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", checksum.Value)
 			}
-		case 8:
+		case spdx.MD5:
 			if checksum.Value != "d41d8cd98f00b204e9800998ecf8427e" {
 				t.Errorf("expected %v, got %v", "d41d8cd98f00b204e9800998ecf8427e", checksum.Value)
 			}

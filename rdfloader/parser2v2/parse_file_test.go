@@ -209,15 +209,15 @@ func Test_rdfParser2_2_setFileChecksumFromNode(t *testing.T) {
 	checksumValue := "d2356e0fe1c0b85285d83c6b2ad51b5f"
 	for _, checksum := range file.FileChecksums {
 		switch checksum.Algorithm {
-		case 1:
+		case spdx.SHA1:
 			if checksum.Value != "" {
 				t.Errorf("incorrectly set sha1, should've been empty")
 			}
-		case 3:
+		case spdx.SHA256:
 			if checksum.Value != "" {
 				t.Errorf("incorrectly set sha256, should've been empty")
 			}
-		case 8:
+		case spdx.MD5:
 			if checksum.Value != checksumValue {
 				t.Errorf("wrong checksum value for md5. Expected: %s, found: %s", checksumValue, checksum.Value)
 			}
@@ -239,15 +239,15 @@ func Test_rdfParser2_2_setFileChecksumFromNode(t *testing.T) {
 	}
 	for _, checksum := range file.FileChecksums {
 		switch checksum.Algorithm {
-		case 1:
+		case spdx.SHA1:
 			if checksum.Value != checksumValue {
 				t.Errorf("wrong checksum value for sha1. Expected: %s, found: %s", checksumValue, checksum.Value)
 			}
-		case 3:
+		case spdx.SHA256:
 			if checksum.Value != "" {
 				t.Errorf("incorrectly set sha256, should've been empty")
 			}
-		case 8:
+		case spdx.MD5:
 			if checksum.Value != checksumValue {
 				t.Errorf("incorrectly set md5, should've been empty")
 			}
@@ -269,15 +269,15 @@ func Test_rdfParser2_2_setFileChecksumFromNode(t *testing.T) {
 	}
 	for _, checksum := range file.FileChecksums {
 		switch checksum.Algorithm {
-		case 1:
+		case spdx.SHA1:
 			if checksum.Value != checksumValue {
 				t.Errorf("incorrectly set sha1, should've been empty")
 			}
-		case 3:
+		case spdx.SHA256:
 			if checksum.Value != checksumValue {
 				t.Errorf("wrong checksum value for sha256. Expected: %s, found: %s", checksumValue, checksum.Value)
 			}
-		case 8:
+		case spdx.MD5:
 			if checksum.Value != checksumValue {
 				t.Errorf("incorrectly set md5, should've been empty")
 			}
@@ -602,7 +602,7 @@ func Test_rdfParser2_2_getFileFromNode(t *testing.T) {
 
 	for _, checksum := range file.FileChecksums {
 		switch checksum.Algorithm {
-		case 1:
+		case spdx.SHA1:
 			if checksum.Value != expectedChecksum {
 				t.Errorf("expected %s, found %s", expectedChecksum, checksum.Value)
 			}
